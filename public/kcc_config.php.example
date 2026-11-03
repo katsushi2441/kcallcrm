@@ -1,0 +1,12 @@
+<?php
+// Kurage テレアポCRM・SFA の設定。このファイルを kcc_config.php という名前で同じフォルダに置く（git には入れない）。
+return [
+    'company'     => '株式会社○○',                          // 自社名（画面の上。設定画面でも変えられる）
+    'db'          => __DIR__ . '/kcc_data/kcallcrm.sqlite',   // できれば公開フォルダの外（例: '/home/users/xxx/kcallcrm_data/kcallcrm.sqlite'）
+    'idle_min'    => 120,                                     // 無操作でログアウトする分
+    'backup_days' => 30,                                      // 毎日のバックアップを残す日数
+    'page_size'   => 50,
+    'api_token'   => '',                                      // api.php の合言葉。使うなら長いランダムな文字列（例: bin2hex(random_bytes(24))）
+    'mcp_user_email' => '',                                   // MCP から記録するときの担当者（利用者のメールアドレス）
+    'demo'        => false,                                   // 本番は必ず false
+];

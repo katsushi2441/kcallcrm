@@ -1,0 +1,9 @@
+public/kcc_config.php
+public/kcc_data/*
+!public/kcc_data/.htaccess
+outputs/
+store/
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+.DS_Store

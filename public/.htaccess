@@ -1,0 +1,11 @@
+# Kurage テレアポCRM・SFA
+# レンタルサーバーの PHP の版の指定は、サーバーごとに違う（例: heteml は "AddHandler php-script .php"）。必要なら1行足す。
+DirectoryIndex index.php
+<FilesMatch "^(kcc_config\.php|kcc_config\.php\.example|kcc_mcp\.php)$">
+  Require all denied
+</FilesMatch>
+# FastCGI では Authorization ヘッダーが PHP に届かないことがある（api.php の Bearer 用）
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+</IfModule>
